@@ -1,0 +1,136 @@
+# Inter-Process Communication Using Pipe and Message Queue
+
+## Overview
+
+This project demonstrates *Inter-Process Communication (IPC)* mechanisms in C using the Linux operating system. It implements two commonly used IPC techniques:
+
+- Pipe
+- Message Queue
+
+The project was developed as part of the Operating Systems course to understand how independent processes exchange data.
+
+## Objectives
+
+- Implement IPC using *Pipe*.
+- Implement IPC using *Message Queue*.
+- Understand process creation using fork().
+- Demonstrate communication between parent and child processes.
+- Compare Pipe and Message Queue based on their functionality.
+
+---
+
+## Project Structure
+
+
+.
+├── pipe_ipc.c          # Pipe implementation
+├── message_queue.c     # Message Queue implementation
+├── README.md
+
+
+---
+
+## Program 1: IPC Using Pipe
+
+### Problem Statement
+
+Evaluate the expression:
+
+√(b² − 4ac)
+
+### Working
+
+- The parent process creates a child process using fork().
+- The child process calculates 4ac.
+- The result is sent to the parent through a pipe.
+- The parent computes b² − 4ac, finds the square root, and displays the result.
+
+### System Calls Used
+
+- pipe()
+- fork()
+- read()
+- write()
+- wait()
+
+---
+
+## Program 2: IPC Using Message Queue
+
+### Problem Statement
+
+Determine whether a given string is a palindrome using Message Queue.
+
+### Working
+
+- The parent process sends a string through a message queue.
+- The child process receives the string and reverses it.
+- The reversed string is sent back to the parent.
+- The parent compares both strings and displays whether the string is a palindrome.
+
+### System Calls Used
+
+- msgget()
+- msgsnd()
+- msgrcv()
+- msgctl()
+
+---
+
+## Requirements
+
+- Linux Operating System
+- GCC Compiler
+- POSIX System Calls
+
+---
+
+## Compilation
+
+### Pipe Program
+
+bash
+gcc pipe_ipc.c -o pipe_ipc -lm
+./pipe_ipc
+
+
+### Message Queue Program
+
+bash
+gcc message_queue.c -o message_queue
+./message_queue
+
+
+---
+
+## Learning Outcomes
+
+- Understood the concept of Inter-Process Communication.
+- Learned to create parent and child processes.
+- Implemented data transfer using Pipe.
+- Implemented structured communication using Message Queue.
+- Compared different IPC mechanisms used in Linux.
+
+---
+
+## Future Enhancements
+
+- Implement Shared Memory IPC.
+- Add Semaphore-based synchronization.
+- Support bidirectional Pipe communication.
+- Extend Message Queue for multiple clients.
+
+---
+
+## Technologies Used
+
+- C Programming
+- Linux
+- GCC Compiler
+- POSIX IPC System Calls
+
+---
+
+## Conclusion
+
+This project successfully demonstrates two fundamental IPC mechanisms—Pipe and Message Queue. It provides practical knowledge of process synchronization and communication in Linux using C programming.
